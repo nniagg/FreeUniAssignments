@@ -1,0 +1,104 @@
+//TEST1
+int n=10;
+int compute() {
+    int a=1;
+    int b=0;
+    int c=0;
+    while (a<=n) {
+        b=a*a;
+        c+=b;
+        a++;
+    }
+    return c;
+}
+int func() {
+    return compute();   //just checked if function calls in functions worked
+} 
+
+
+//TEST2
+//POW function, which finds power a^b, just gets called several times 
+//I'll just show one example (lines 10-15 from file "Test2")
+int a=3;
+int b=3;
+int c=4;
+int pow() {
+    int d = 1; 
+    while (d<c) {
+        a*=b;
+        d++;
+    }
+    return a;
+}
+
+
+//TEST3
+int n=57;
+int op() {
+    int count = 0;
+    while (n>1) {
+        count++;
+        if (n%2 == 0)  { // This condition is checked if (n/2) * 2 == n
+            n/=2;
+        }   else {
+            n--;
+        }
+    }
+    return count;
+}
+
+//TEST4
+int fib (int n) {
+    if (n<=1) {
+        return n;
+    }
+    int f=0;
+    int s=1;
+    int a=2;
+    int ans;
+    while (a<=n) {
+        ans=f+s;
+        f=s;
+        s=ans;
+        a++;
+    }
+    return ans;
+}
+
+//TEST5
+//After some manipulations with registers, memory and printf:
+int a=5;    //stored in R1
+int b=2;    //stored in R2
+if (a<=b) {
+    int c=(b-a)*2;
+    printf("%d\n",c);
+}   else {
+    int c=(a-b)*2;
+    printf("%d\n",c);
+}
+
+//Value of c also gets stored in memory array
+
+
+//TEST6
+int fib_rec(int n) {
+    if(n<=1) {
+        return n;
+    }
+    int a=fib_rec(n-1);
+    int b=fib_rec(n-2);
+    return a+b;
+}
+
+//TEST7
+int SQRMLT(int a, int b, int c) {
+    int d=a*a;
+    int e=b*b;
+    int f=c*c;
+    e=d*e;
+    f=e*f;
+    return f;
+}
+
+
+//In last test (Test 8), I tried to check all the operations my emulator supports. 
